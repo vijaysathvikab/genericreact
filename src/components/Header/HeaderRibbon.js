@@ -8,7 +8,7 @@ const HeaderRibbon = ({ icons }) => {
         <div className="icon-container">
           {icons.map((icon, index) => (
             <a key={index} href={icon.link} className="icon-link">
-              <img src={icon.url} alt={icon.alt} className="icon-image" />
+              <i className={`bi bi-${icon.url}`}></i>
             </a>
           ))}
         </div>

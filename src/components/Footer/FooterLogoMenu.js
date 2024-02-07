@@ -1,11 +1,12 @@
 // FooterLogoMenu.jsx
 import React from "react";
+const complogo = require('../../assets/brand.jpg');
 
 const FooterLogoMenu = ({ logo, menus }) => {
   return (
     <div className="footer-info">
       <div className="logo-container">
-        {logo && <img src={logo.url} alt={logo.alt} className="logo-image" />}
+        {logo && <img src={complogo} width={300} alt={logo.alt} className="logo-image" />}
       </div>
 
       <div className="menu-container">

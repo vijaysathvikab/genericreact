@@ -8,8 +8,8 @@ function App() {
   // FooterConfig.js
   const footerConfig = {
     icons: [
-      { url: "footer_icon1.png", alt: "Footer Icon 1", link: "/footer-link1" },
-      { url: "footer_icon2.png", alt: "Footer Icon 2", link: "/footer-link2" },
+      { url: "linkedin", alt: "Footer Icon 1", link: "/footer-link1" },
+      { url: "facebook", alt: "Footer Icon 2", link: "/footer-link2" },
     ],
     logo: { url: "footer_logo.png", alt: "Footer Logo" },
     menus: [
@@ -43,10 +43,10 @@ function App() {
   //Header configuration
   const headerConfig = {
     icons: [
-      { url: "icon1.png", alt: "Icon 1", link: "/link1" },
-      { url: "icon2.png", alt: "Icon 2", link: "/link2" },
+      { url: "instagram", alt: "Icon 1", link: "/link1" },
+      { url: "facebook", alt: "Icon 2", link: "/link2" },
     ],
-    logo: { url: "company_logo.png", alt: "Company Logo" },
+    logo: { url: "/assets/lion.jpg", alt: "Company Logo" },
     tagline: "Building a Better Future",
     menus: [
       { label: "Home", link: "/home" },

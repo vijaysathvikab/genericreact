@@ -1,6 +1,7 @@
 // HeaderLogoMenu.jsx
 import React from "react";
 import MegaMenu from "./MegaMenu";
+const complogo = require('../../assets/lion.jpg');
 
 const HeaderLogoMenu = ({
   icons,
@@ -17,7 +18,7 @@ const HeaderLogoMenu = ({
   return (
     <div className="company-info">
       <div className="logo-container" style={logoStyle}>
-        {logo && <img src={logo.url} alt={logo.alt} className="logo-image" />}
+        {logo && <img src={complogo} height={200} alt={logo.alt} className="logo-image" />}
         {tagline && <p className="tagline">{tagline}</p>}
       </div>
 

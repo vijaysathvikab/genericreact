@@ -7,7 +7,7 @@ const Footer = ({ configuration }) => {
   const { icons, logo, menus } = configuration;
 
   return (
-    <footer>
+    <footer className="mt-2">
       <FooterLogoMenu logo={logo} menus={menus} />
       <FooterRibbon icons={icons} />
     </footer>
