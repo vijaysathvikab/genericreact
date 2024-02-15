@@ -3,78 +3,13 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { GenericForm } from "./components/form/GenericForm";
 import { useState } from "react";
+import ContentBlock from "./components/ContentBlock/ContentBlock";
+import SwiperBanner from "./components/SwiperBanner/SwiperBanner";
+import SwiperImages from "./components/SwiperImages/SwiperImages";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
+import TabComponent from "./components/TabComponent/TabComponent";
 
 function App() {
-  // FooterConfig.js
-  const footerConfig = {
-    icons: [
-      { url: "linkedin", alt: "Footer Icon 1", link: "/footer-link1" },
-      { url: "facebook", alt: "Footer Icon 2", link: "/footer-link2" },
-    ],
-    logo: { url: "footer_logo.png", alt: "Footer Logo" },
-    menus: [
-      {
-        title: "Set 1",
-        items: [
-          { label: "Item 1", link: "/footer-item1" },
-          { label: "Item 2", link: "/footer-item2" },
-          { label: "Item 3", link: "/footer-item3" },
-        ],
-      },
-      {
-        title: "Set 2",
-        items: [
-          { label: "Item 4", link: "/footer-item4" },
-          { label: "Item 5", link: "/footer-item5" },
-          { label: "Item 6", link: "/footer-item6" },
-        ],
-      },
-      {
-        title: "Set 3",
-        items: [
-          { label: "Item 7", link: "/footer-item7" },
-          { label: "Item 8", link: "/footer-item8" },
-          { label: "Item 9", link: "/footer-item9" },
-        ],
-      },
-    ],
-  };
-
-  //Header configuration
-  const headerConfig = {
-    icons: [
-      { url: "instagram", alt: "Icon 1", link: "/link1" },
-      { url: "facebook", alt: "Icon 2", link: "/link2" },
-    ],
-    logo: { url: "/assets/lion.jpg", alt: "Company Logo" },
-    tagline: "Building a Better Future",
-    menus: [
-      { label: "Home", link: "/home" },
-      { label: "About Us", link: "/about" },
-      { label: "Contact", link: "/contact" },
-    ],
-    megaMenu: [
-      {
-        label: "Category 1",
-        items: [
-          { label: "Item 1-1", link: "/item-1-1" },
-          {
-            label: "Item 1-2",
-            link: "/item-1-2",
-            submenu: [
-              { label: "Subitem 1-2-1", link: "/subitem-1-2-1" },
-              { label: "Subitem 1-2-2", link: "/subitem-1-2-2" },
-            ],
-          },
-        ],
-      },
-      // Add more categories as needed
-    ],
-    alignment: "center",
-    logoAlignment: "left",
-    iconsAlignment: "right",
-  };
-
   const [formData, setFormData] = useState({});
 
   const handleSubmit = (data) => {
@@ -163,7 +98,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header configuration={headerConfig} />
+      <Header configuration={{}} />
+      <ContentBlock configuration={{}} />
       <GenericForm
         formConfig={formConfig}
         jsonInput={jsonInput}
@@ -172,7 +108,11 @@ function App() {
         onSubmitFunc={handleSubmit}
         headerText="My Form"
       />
-      <Footer configuration={footerConfig} />
+      <SwiperBanner configuration={{}} />
+      <SwiperImages configuration={{}} />
+      <ImageGallery configuration={{}} />
+      <TabComponent configuration={{}} />
+      <Footer configuration={{}} />
     </div>
   );
 }

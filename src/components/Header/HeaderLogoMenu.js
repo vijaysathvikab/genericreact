@@ -1,39 +1,73 @@
 // HeaderLogoMenu.jsx
 import React from "react";
-import MegaMenu from "./MegaMenu";
-const complogo = require('../../assets/lion.jpg');
+const complogo = require("../../assets/lion.jpg");
 
-const HeaderLogoMenu = ({
-  icons,
-  logo,
-  tagline,
-  menus,
-  megaMenu,
-  logoAlignment,
-  iconsAlignment,
-}) => {
-  const logoStyle = { order: logoAlignment === "right" ? 1 : 0 };
-  // const iconsStyle = { order: iconsAlignment === "right" ? 1 : 0 };
-
+const HeaderLogoMenu = ({ config }) => {
+  const {
+    logo,
+    tagline,
+    menus,
+    logoPosition,
+    menuPostion,
+    backgroundColor,
+    color,
+  } = config;
+  const logoOrder =
+    logoPosition !== menuPostion && logoPosition === "right" ? 2 : 0;
   return (
-    <div className="company-info">
-      <div className="logo-container" style={logoStyle}>
-        {logo && <img src={complogo} height={200} alt={logo.alt} className="logo-image" />}
+    <div
+      className={`header-main d-flex container-fluid py-4 
+      ${
+        logoPosition === menuPostion
+          ? "flex-column"
+          : "justify-content-between align-items-center"
+      }
+      ${
+        logoPosition === menuPostion &&
+        logoPosition === "right" &&
+        "align-items-end"
+      }
+      ${
+        logoPosition === menuPostion &&
+        logoPosition === "center" &&
+        "align-items-center"
+      }
+      `}
+      style={{
+        backgroundColor: backgroundColor,
+        color: color,
+      }}
+    >
+      <div
+        className="logo-container"
+        style={{ width: "fit-content", order: logoOrder }}
+      >
+        {logo && (
+          <a href={logo?.logoLink}>
+            <img
+              src={complogo}
+              width={200}
+              height={75}
+              alt={logo.alt}
+              className="logo-image"
+            />
+          </a>
+        )}
         {tagline && <p className="tagline">{tagline}</p>}
       </div>
 
-      <div className="menu-container">
+      <div className="menu-container" style={{ width: "fit-content" }}>
         {menus && (
-          <ul className="menu-list">
+          <div className="menu-list d-flex gap-2">
             {menus.map((menu, index) => (
-              <li key={index} className="menu-item">
-                <a href={menu.link}>{menu.label}</a>
-              </li>
+              <div key={index} className="menu-item fw-bold">
+                <a href={menu.link} style={{ color: color }}>
+                  {menu.label}
+                </a>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
-
-        {megaMenu && <MegaMenu megaMenu={megaMenu} />}
       </div>
     </div>
   );

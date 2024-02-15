@@ -12,13 +12,13 @@ const GenericForm = ({
 }) => {
   // Generate initial form values based on jsonInput
   const initialFormValues = Object.fromEntries(
-    Object.keys(jsonInput).map((fieldName) => [fieldName, ""])
+    Object.keys(jsonInput)?.map((fieldName) => [fieldName, ""])
   );
 
   // Generate Yup validation schema based on jsonInput
   const validationSchema = Yup.object().shape(
     Object.fromEntries(
-      Object.entries(jsonInput).map(([fieldName, fieldConfig]) => {
+      Object.entries(jsonInput)?.map(([fieldName, fieldConfig]) => {
         let fieldSchema = Yup.string().matches(
           new RegExp(fieldConfig.validationRegex),
           {
@@ -54,7 +54,7 @@ const GenericForm = ({
     <div className={formConfig.formClass} style={formConfig.formStyle}>
       <h2>{headerText}</h2>
       <form onSubmit={formik.handleSubmit}>
-        {Object.entries(jsonInput).map(([fieldName, fieldConfig]) => (
+        {Object.entries(jsonInput)?.map(([fieldName, fieldConfig]) => (
           <div
             key={fieldName}
             style={{ width: fieldConfig.width || "100%" }}

@@ -1,43 +1,67 @@
 // MegaMenu.jsx
 import React from "react";
+import "./MegaMenu.scss";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
-const MenuItem = ({ item, idx }) => (
-  <li className="inner-menu-item">
-    <a className="dropdown-item" href={item.link}>
-      {item.label}
-    </a>
-    {item.submenu && <MegaMenu megaMenu={item.submenu} idx={idx} />}
-  </li>
-);
-
-const MegaMenu = ({ megaMenu, idx }) => {
+const MegaMenu = ({ config, idx }) => {
+  const { megaMenu, backgroundColor, color } = config;
+  const menuShow = (mItems) => {
+    return mItems?.map((item, index) => {
+      if (item.submenu) {
+        return (
+          <NavDropdown
+            title={item.label}
+            key={index}
+            className={`dropdown-menu-dark dropend`}
+          >
+            {menuShow(item.submenu)}
+          </NavDropdown>
+        );
+      } else {
+        return (
+          <Nav.Link href={item.link} key={index}>
+            {item.label}
+          </Nav.Link>
+        );
+      }
+    });
+  };
+  const navStyle = {
+    backgroundColor: backgroundColor,
+    color: color,
+    fontWeight: "bold",
+  };
   return (
-    <div className="mega-menu dropdown">
-      {megaMenu?.map((category, index) => (
-        <div key={index} className="menu-category">
-          <button
-            className="btn btn-secondary dropdown-toggle material-design-button"
-            type="button"
-            id={`megaMenuButton-${idx ? idx : ""}`}
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <h3>{category.label}</h3>
-          </button>
-          <div
-            className="dropdown-menu material-design-dropdown"
-            aria-labelledby={`megaMenuButton-${idx ? idx : ""}`}
-          >
-            <ul className="inner-menu-list">
-              {category.items?.map((item, idx) => (
-                <MenuItem key={idx} item={item} idx={idx} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
-    </div>
+    <Navbar expand="lg" variant="light" style={navStyle} className="py-0">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav
+          className="mr-auto d-flex justify-content-around col-12"
+          style={navStyle}
+        >
+          {megaMenu?.map((item, index) => {
+            if (item.submenu) {
+              return (
+                <NavDropdown
+                  title={item.label}
+                  key={index}
+                  className={`dropdown-menu-dark basic-navbar-dropdown firstnavlink`}
+                  style={{ color: color }}
+                >
+                  {menuShow(item.submenu)}
+                </NavDropdown>
+              );
+            } else {
+              return (
+                <Nav.Link href={item.link} key={index} className="firstnavlink">
+                  {item.label}
+                </Nav.Link>
+              );
+            }
+          })}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
