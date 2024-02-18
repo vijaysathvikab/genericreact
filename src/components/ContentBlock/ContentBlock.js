@@ -1,19 +1,19 @@
 import React from "react";
 
-function ContentBlock() {
-  const blockConfig = {
-    component: "contentBlock",
-    body: "<h1>His is a content block heading</h1>",
-  };
+function ContentBlock(blockConfig) {
+  // const blockConfig = {
+  //   component: "contentBlock",
+  //   body: "<h1>His is a content block heading</h1>",
+  // };
 
   return (
     <div
       className="contentBlock py-2"
       dangerouslySetInnerHTML={{
-        __html: blockConfig?.body || "",
+        __html: blockConfig?.contentBody || "",
       }}
     />
   );
 }
 
-export default ContentBlock;
+export { ContentBlock };

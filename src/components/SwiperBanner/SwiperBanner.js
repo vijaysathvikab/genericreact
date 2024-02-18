@@ -112,4 +112,4 @@ function SwiperBanner() {
   );
 }
 
-export default SwiperBanner;
+export { SwiperBanner };

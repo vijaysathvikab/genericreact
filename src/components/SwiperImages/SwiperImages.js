@@ -94,4 +94,4 @@ function SwiperImages() {
   );
 }
 
-export default SwiperImages;
+export { SwiperImages };

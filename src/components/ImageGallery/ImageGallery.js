@@ -38,4 +38,4 @@ function ImageGallery() {
   );
 }
 
-export default ImageGallery;
+export { ImageGallery };

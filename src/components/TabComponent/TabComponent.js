@@ -26,4 +26,4 @@ function TabComponent() {
   );
 }
 
-export default TabComponent;
+export { TabComponent };

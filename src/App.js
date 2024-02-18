@@ -1,13 +1,16 @@
 import "./App.css";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+import DynamicPage from "./pages/DynamicPage/DynamicPage";
 import { GenericForm } from "./components/form/GenericForm";
 import { useState } from "react";
-import ContentBlock from "./components/ContentBlock/ContentBlock";
-import SwiperBanner from "./components/SwiperBanner/SwiperBanner";
-import SwiperImages from "./components/SwiperImages/SwiperImages";
-import ImageGallery from "./components/ImageGallery/ImageGallery";
-import TabComponent from "./components/TabComponent/TabComponent";
+// import { ContentBlock } from "./components/ContentBlock/ContentBlock";
+// import { SwiperBanner } from "./components/SwiperBanner/SwiperBanner";
+// import { SwiperImages } from "./components/SwiperImages/SwiperImages";
+// import { ImageGallery } from "./components/ImageGallery/ImageGallery";
+// import { TabComponent } from "./components/TabComponent/TabComponent";
+// import { useContentContext } from "./contexts/ContentContext";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [formData, setFormData] = useState({});
@@ -99,7 +102,10 @@ function App() {
   return (
     <div className="App">
       <Header configuration={{}} />
-      <ContentBlock configuration={{}} />
+      <Routes>
+        <Route path={"*"} element={<DynamicPage />} />
+      </Routes>
+
       <GenericForm
         formConfig={formConfig}
         jsonInput={jsonInput}
@@ -108,10 +114,13 @@ function App() {
         onSubmitFunc={handleSubmit}
         headerText="My Form"
       />
+      {/*
+      <ContentBlock configuration={{}} />
       <SwiperBanner configuration={{}} />
       <SwiperImages configuration={{}} />
       <ImageGallery configuration={{}} />
-      <TabComponent configuration={{}} />
+      <TabComponent configuration={{}} /> */}
+
       <Footer configuration={{}} />
     </div>
   );
