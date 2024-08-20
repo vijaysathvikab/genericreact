@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: white;
+}
+
+.logoutBtn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.logoutBtn:hover {
+    color: white;
+}
