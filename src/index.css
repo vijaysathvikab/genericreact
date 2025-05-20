@@ -1,6 +1,23 @@
-html{
+:root {
+  --primary: #007bff;
+  --primary-hover: #0056b3;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --background: #ffffff;
+}
+
+html {
   min-height: 100%;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
