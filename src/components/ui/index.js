@@ -7,6 +7,8 @@ export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as Text } from './Typography/Text';
 export { default as Heading } from './Typography/Heading';
 export { default as Modal } from './Modal/Modal';
+export { default as Select } from './Select/Select';
+
 
 
 
