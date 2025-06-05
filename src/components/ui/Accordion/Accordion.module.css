@@ -1,0 +1,40 @@
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.item {
+    border-bottom: 1px solid #ddd;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.header {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header:hover {
+    background: #e9ecef;
+}
+
+.active {
+    background: #e2e6ea;
+}
+
+.content {
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid #ddd;
+}

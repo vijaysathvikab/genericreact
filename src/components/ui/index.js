@@ -9,6 +9,10 @@ export { default as Heading } from './Typography/Heading';
 export { default as Modal } from './Modal/Modal';
 export { default as Select } from './Select/Select';
 export { default as Tooltip } from './Tooltip/Tooltip';
+export { default as Accordion } from './Accordion/Accordion';
+export { default as Tabs } from './Tabs/Tabs';
+
+
 
 
 
