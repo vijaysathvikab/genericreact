@@ -11,6 +11,8 @@ export { default as Select } from './Select/Select';
 export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as Accordion } from './Accordion/Accordion';
 export { default as Tabs } from './Tabs/Tabs';
+export { default as Toast } from './Toast/Toast';
+
 
 
 
