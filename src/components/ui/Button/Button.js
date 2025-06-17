@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Button.module.css';
 
-const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }) => {
+const Button = React.memo(({ children, variant = 'primary', size = 'md', className = '', ...props }) => {
   return (
     <button 
       className={`${styles.btn} ${styles[variant]} ${size === 'sm' ? styles.sm : size === 'lg' ? styles.lg : ''} ${className}`} 
@@ -11,6 +11,6 @@ const Button = ({ children, variant = 'primary', size = 'md', className = '', ..
       {children}
     </button>
   );
-};
+});
 
 export default Button;
