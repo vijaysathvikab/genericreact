@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## UI Components
+
+This project includes a collection of reusable UI components and hooks.
+
+### Components
+- **Button**: Reusable button component with variants.
+- **Card**: Container component for grouping content.
+- **Badge**: Value indicator component.
+- **Input**: Form input field.
+- **Checkbox**: Form checkbox.
+- **Select**: Dropdown selection.
+- **Container**: Layout container.
+- **Grid**: Row and Col components for layout.
+- **Typography**: Text and Heading components.
+- **Modal**: Dialog component.
+- **Tooltip**: Helper text on hover.
+- **Accordion**: Collapsible content.
+- **Tabs**: Tabbed navigation.
+- **Toast**: Notification messages.
+
+### Hooks
+- **useDebounce**: Debounce a value.
+- **useLocalStorage**: Persist state to local storage.
+- **useMediaQuery**: Respond to media query changes.
